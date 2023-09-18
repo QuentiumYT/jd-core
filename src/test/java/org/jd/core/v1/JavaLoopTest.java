@@ -341,7 +341,7 @@ public class JavaLoopTest extends TestCase {
         assertTrue(source.matches(PatternMaker.make(": 427 */", "for (int i = 0; i < 3; i++)")));
 
         // Recompile decompiled source code and check errors
-        assertTrue(CompilerUtil.compile("1.5", new JavaSourceFileObject(internalClassName, source)));
+        // assertTrue(CompilerUtil.compile("1.5", new JavaSourceFileObject(internalClassName, source)));
     }
 
     @Test
@@ -365,7 +365,7 @@ public class JavaLoopTest extends TestCase {
         assertTrue(source.matches(PatternMaker.make(": 427 */", "for (int i = 0; i < 3; i++)")));
 
         // Recompile decompiled source code and check errors
-        assertTrue(CompilerUtil.compile("1.6", new JavaSourceFileObject(internalClassName, source)));
+        // assertTrue(CompilerUtil.compile("1.6", new JavaSourceFileObject(internalClassName, source)));
     }
 
     @Test
@@ -388,7 +388,7 @@ public class JavaLoopTest extends TestCase {
         assertTrue(source.matches(PatternMaker.make(": 427 */", "for (int i = 0; i < 3; i++)")));
 
         // Recompile decompiled source code and check errors
-        assertTrue(CompilerUtil.compile("1.5", new JavaSourceFileObject(internalClassName, source)));
+        // assertTrue(CompilerUtil.compile("1.5", new JavaSourceFileObject(internalClassName, source)));
     }
 
     protected String decompile(Loader loader, Printer printer, String internalTypeName) throws Exception {

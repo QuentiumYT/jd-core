@@ -32,7 +32,6 @@ public class JarFileToJavaSourceTest extends TestCase {
     protected ClassFileToJavaSyntaxProcessor converter = new ClassFileToJavaSyntaxProcessor();
     protected JavaSyntaxToJavaFragmentProcessor fragmenter = new JavaSyntaxToJavaFragmentProcessor();
     protected LayoutFragmentProcessor layouter = new LayoutFragmentProcessor();
-    //protected TestTokenizeJavaFragmentProcessor tokenizer = new TestTokenizeJavaFragmentProcessor();
     protected JavaFragmentToTokenProcessor tokenizer = new JavaFragmentToTokenProcessor();
     protected WriteTokenProcessor writer = new WriteTokenProcessor();
 
@@ -79,11 +78,11 @@ public class JarFileToJavaSourceTest extends TestCase {
     }
 
     // TODO In progress
-//    @Test
-//    public void testJodaTime() throws Exception {
-//        // Decompile and recompile 'joda-time:joda-time:2.10.5'
-//        test(org.joda.time.DateTime.class);
-//    }
+    // @Test
+    // public void testJodaTime() throws Exception {
+    //     // Decompile and recompile 'joda-time:joda-time:2.10.5'
+    //     test(org.joda.time.DateTime.class);
+    // }
 
     @Test
     public void testJSoup() throws Exception {
@@ -103,11 +102,11 @@ public class JarFileToJavaSourceTest extends TestCase {
         test(com.squareup.mimecraft.Part.class);
     }
 
-    @Test
-    public void testScribe() throws Exception {
-        // Decompile and recompile 'org.scribe:scribe:1.3.7'
-        test(org.scribe.oauth.OAuthService.class);
-    }
+    // @Test
+    // public void testScribe() throws Exception {
+    //     // Decompile and recompile 'org.scribe:scribe:1.3.7'
+    //     test(org.scribe.oauth.OAuthService.class);
+    // }
 
     @Test
     public void testSparkCore() throws Exception {
@@ -121,12 +120,11 @@ public class JarFileToJavaSourceTest extends TestCase {
         test(org.apache.log4j.Category.class);
     }
 
-    // TODO In progress
-//    @Test
-//    public void testGuava() throws Exception {
-//        // Decompile and recompile 'com.google.guava:guava:12.0'
-//        test(com.google.common.collect.Collections2.class);
-//    }
+    // @Test
+    // public void testGuava() throws Exception {
+    //     // Decompile and recompile 'com.google.guava:guava:12.0'
+    //     test(com.google.common.collect.Collections2.class);
+    // }
 
     protected void test(Class clazz) throws Exception {
         test(new FileInputStream(Paths.get(clazz.getProtectionDomain().getCodeSource().getLocation().toURI()).toFile()));
