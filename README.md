@@ -1,24 +1,20 @@
 # JD-Core
 
-JD-Core is a JAVA decompiler written in JAVA.
+JD-Core is a Java decompiler written in Java.
 
-- Java Decompiler project home page:
-[http://java-decompiler.github.io](https://java-decompiler.github.io)
-- JD-Core source code:
-[https://github.com/java-decompiler/jd-core](https://github.com/java-decompiler/jd-core)
-- JCenter Maven repository:
-[https://jcenter.bintray.com/](https://bintray.com/java-decompiler/maven/org.jd%3Ajd-core/_latestVersion)
+This is a fork of the original JD-Core project, which is no longer maintained. I tried to fix and update dependencies to make it live longer and be useful for the community. If you have a good knowledge of Java and want to help, feel free to contribute. 😃
+
+- Java Decompiler project home page: https://java-decompiler.github.io
+- JD-Core source code: https://github.com/QuentiumYT/jd-core
+- JD-GUI public releases: https://launchpad.net/~quentiumyt/+archive/ubuntu/jd-gui
 
 ## Description
-JD-Core is a standalone JAVA library containing the JAVA decompiler of
-"Java Decompiler project". It support Java 1.1.8 to Java 12.0,
-including Lambda expressions, method references and default methods.
-JD-Core is the engine of JD-GUI.
+JD-Core is a standalone Java library containing the Java decompiler of "Java Decompiler project". It support Java 1.1.8 (not tested) to Java 17 (recently added), including Lambda expressions, method references and default methods. JD-Core is the engine of JD-GUI.
 
 ## How to build JD-Core ?
 ```
-> git clone https://github.com/java-decompiler/jd-core.git
-> cd jd-core
+> git clone https://github.com/QuentiumYT/jd-core.git
+> cd jd-core/
 > ./gradlew build
 ```
 generate _"build/libs/jd-core-x.y.z.jar"_
@@ -26,10 +22,10 @@ generate _"build/libs/jd-core-x.y.z.jar"_
 ## How to use JD-Core ?
 
 1. Implement the
-_[org.jd.core.loader.Loader](https://github.com/java-decompiler/jd-core/blob/master/src/main/java/org/jd/core/v1/api/loader/Loader.java)_
+_[org.jd.core.loader.Loader](https://github.com/QuentiumYT/jd-core/blob/master/src/main/java/org/jd/core/v1/api/loader/Loader.java)_
 interface,
 2. Implement the
-_[org.jd.core.printer.Printer](https://github.com/java-decompiler/jd-core/blob/master/src/main/java/org/jd/core/v1/api/printer/Printer.java)_
+_[org.jd.core.printer.Printer](https://github.com/QuentiumYT/jd-core/blob/master/src/main/java/org/jd/core/v1/api/printer/Printer.java)_
 interface,
 3. And call the method _"decompile(loader, printer, internalTypeName);"_
 
