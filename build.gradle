@@ -1,8 +1,14 @@
-apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'idea'
-apply plugin: 'maven-publish'
-apply plugin: 'com.jfrog.bintray'
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://plugins.gradle.org/m2/'
+    }
+}
 
 dependencies {
     testImplementation 'commons-codec:commons-codec:1.13'
@@ -27,6 +33,13 @@ dependencies {
 
 version = '1.2.0'
 
+jar {
+    manifest {
+        attributes 'JD-Core-Version': version
+    }
+}
+
+// Java compilation settings
 tasks.withType(JavaCompile) {
     sourceCompatibility = targetCompatibility = '1.8'
     options.compilerArgs << '-Xlint:deprecation'
@@ -34,32 +47,13 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
-buildscript {
-    repositories {
-        mavenCentral()
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.+'
-    }
-}
-
-repositories {
-    jcenter()
-}
-
-jar {
-    manifest {
-        attributes 'JD-Core-Version': version
-    }
-}
-
-// Publication to JCenter Maven repository
+// Publication to Maven repository
 task sourceJar(type: Jar) {
     archiveClassifier = 'sources'
     from sourceSets.main.allJava
 }
 
+// Publication to Maven Local repository
 publishing {
     publications {
         publicationJdCore(MavenPublication) {
@@ -73,40 +67,4 @@ publishing {
     repositories {
         mavenLocal()
     }
-}
-
-bintray {
-    // Command: gradlew -Dbintray.user=XXX -Dbintray.key=YYY bintrayUpload
-    user = System.getProperty('bintray.user')
-    key = System.getProperty('bintray.key')
-    publications = ['publicationJdCore']
-
-    dryRun = false //[Default: false] Whether to run this as dry-run, without deploying
-    publish = true //[Default: false] Whether version should be auto published after an upload
-    override = false //[Default: false] Whether to override version artifacts already published
-
-    pkg {
-        userOrg = 'java-decompiler'
-        repo = 'maven'
-        name = 'org.jd:jd-core'
-        description = 'JD-Core is a JAVA decompiler written in JAVA.'
-        licenses = ['GPL-3.0']
-
-        websiteUrl = 'https://github.com/java-decompiler/jd-core'
-        issueTrackerUrl = 'https://github.com/java-decompiler/jd-core/issues'
-        vcsUrl = 'https://github.com/java-decompiler/jd-core.git'
-
-        publicDownloadNumbers = true
-        version {
-            name = project.version
-            released = new Date()
-        }
-    }
-}
-
-// 'cleanIdea' task extension //
-cleanIdea.doFirst {
-    delete project.name + '.iws'
-    delete 'out'
-    followSymlinks = true
 }
