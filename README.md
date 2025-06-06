@@ -9,7 +9,7 @@ This is a fork of the original JD-Core project, which is no longer maintained. I
 - JD-GUI public releases: https://launchpad.net/~quentiumyt/+archive/ubuntu/jd-gui
 
 ## Description
-JD-Core is a standalone Java library containing the Java decompiler of "Java Decompiler project". It support Java 1.1.8 (not tested) to Java 17 (recently added), including Lambda expressions, method references and default methods. JD-Core is the engine of JD-GUI.
+JD-Core is a standalone Java library containing the Java decompiler of "Java Decompiler project". It support Java 1.1.8 (not tested) Java 8 to Java 21, including Lambda expressions, method references and default methods. JD-Core is the engine of JD-GUI.
 
 ## How to build JD-Core ?
 ```
@@ -17,7 +17,7 @@ JD-Core is a standalone Java library containing the Java decompiler of "Java Dec
 > cd jd-core/
 > ./gradlew build
 ```
-generate _"build/libs/jd-core-x.y.z.jar"_
+_generates "build/libs/jd-core-x.y.z.jar"_
 
 ## How to use JD-Core ?
 
