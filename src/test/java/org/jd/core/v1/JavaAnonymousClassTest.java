@@ -69,11 +69,11 @@ public class JavaAnonymousClassTest extends TestCase {
         assertTrue(source.indexOf("{ ;") == -1);
 
         // Recompile decompiled source code and check errors
-        // assertTrue(CompilerUtil.compile(
-        //         "1.5",
-        //         new JavaSourceFileObject(internalClassName, source),
-        //         new JavaSourceFileObject("org/jd/core/test/annotation/Name", "package org.jd.core.test.annotation; public @interface Name {String value();}")
-        // ));
+        assertTrue(CompilerUtil.compile(
+                "1.7",
+                new JavaSourceFileObject(internalClassName, source),
+                new JavaSourceFileObject("org/jd/core/test/annotation/Name", "package org.jd.core.test.annotation; public @interface Name {String value();}")
+        ));
     }
 
     @Test

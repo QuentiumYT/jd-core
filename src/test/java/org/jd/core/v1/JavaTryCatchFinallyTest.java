@@ -134,7 +134,7 @@ public class JavaTryCatchFinallyTest extends TestCase {
         assertTrue(source.indexOf("Exception exception8;") == -1);
 
         // Recompile decompiled source code and check errors
-        // assertTrue(CompilerUtil.compile("1.5", new JavaSourceFileObject(internalClassName, source)));
+        assertTrue(CompilerUtil.compile("1.7", new JavaSourceFileObject(internalClassName, source)));
 
         System.out.println(JavaTryCatchFinallyTest.class.getProtectionDomain().getCodeSource().getLocation().getPath());
         System.out.println(System.getProperty("java.class.path"));
@@ -178,7 +178,7 @@ public class JavaTryCatchFinallyTest extends TestCase {
         assertTrue(source.indexOf("Exception exception8;") == -1);
 
         // Recompile decompiled source code and check errors
-        // assertTrue(CompilerUtil.compile("1.5", new JavaSourceFileObject(internalClassName, source)));
+        assertTrue(CompilerUtil.compile("1.7", new JavaSourceFileObject(internalClassName, source)));
     }
 
     @Test
@@ -218,7 +218,7 @@ public class JavaTryCatchFinallyTest extends TestCase {
         assertTrue(source.indexOf("Exception exception8;") == -1);
 
         // Recompile decompiled source code and check errors
-        // assertTrue(CompilerUtil.compile("1.5", new JavaSourceFileObject(internalClassName, source)));
+        assertTrue(CompilerUtil.compile("1.7", new JavaSourceFileObject(internalClassName, source)));
     }
 
     @Test
@@ -258,7 +258,7 @@ public class JavaTryCatchFinallyTest extends TestCase {
         assertTrue(source.indexOf("Exception exception8;") == -1);
 
         // Recompile decompiled source code and check errors
-        // assertTrue(CompilerUtil.compile("1.3", new JavaSourceFileObject(internalClassName, source)));
+        assertTrue(CompilerUtil.compile("1.7", new JavaSourceFileObject(internalClassName, source)));
     }
 
     @Test
@@ -294,7 +294,7 @@ public class JavaTryCatchFinallyTest extends TestCase {
         assertTrue(source.indexOf("Exception exception8;") == -1);
 
         // Recompile decompiled source code and check errors
-        // assertTrue(CompilerUtil.compile("1.3", new JavaSourceFileObject(internalClassName, source)));
+        assertTrue(CompilerUtil.compile("1.7", new JavaSourceFileObject(internalClassName, source)));
     }
 
     @Test

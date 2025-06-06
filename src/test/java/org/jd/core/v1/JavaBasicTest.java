@@ -190,7 +190,7 @@ public class JavaBasicTest extends TestCase {
         assertTrue(source.matches(PatternMaker.make("/* 176: 176 */", "return str;")));
 
         // Recompile decompiled source code and check errors
-        // assertTrue(CompilerUtil.compile("1.3", new JavaSourceFileObject(internalClassName, source)));
+        assertTrue(CompilerUtil.compile("1.7", new JavaSourceFileObject(internalClassName, source)));
     }
 
     @Test
@@ -213,7 +213,7 @@ public class JavaBasicTest extends TestCase {
         assertTrue(source.matches(PatternMaker.make("/* 188: 188 */", "protected static final Integer INTEGER_255 = new Integer(255);")));
 
         // Recompile decompiled source code and check errors
-        // assertTrue(CompilerUtil.compile("1.4", new JavaSourceFileObject(internalClassName, source)));
+        assertTrue(CompilerUtil.compile("1.7", new JavaSourceFileObject(internalClassName, source)));
     }
 
     @Test
