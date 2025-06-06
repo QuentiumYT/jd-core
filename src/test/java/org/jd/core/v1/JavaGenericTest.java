@@ -67,7 +67,7 @@ public class JavaGenericTest extends TestCase {
 
         // Recompile decompiled source code and check errors
         assertTrue(CompilerUtil.compile(
-                "1.7",
+                "1.8",
                 new JavaSourceFileObject(internalClassName, source),
                 new JavaSourceFileObject("org/jd/core/test/AnnotatedClass", "package org.jd.core.test; public class AnnotatedClass {}")
             ));

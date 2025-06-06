@@ -65,7 +65,7 @@ public class JavaLoopTest extends TestCase {
         assertTrue(source.matches(PatternMaker.make("/* 431: 431 */", "System.out.println(\"a\");")));
 
         // Recompile decompiled source code and check errors
-        assertTrue(CompilerUtil.compile("1.7", new JavaSourceFileObject(internalClassName, source)));
+        assertTrue(CompilerUtil.compile("1.8", new JavaSourceFileObject(internalClassName, source)));
     }
 
     @Test
@@ -145,7 +145,7 @@ public class JavaLoopTest extends TestCase {
         assertTrue(source.indexOf("while ((i == 1 && (i == 5 || i == 6 || i == 7) && i == 8 && (i == 9 || i == 10 || i == 11)) || (i == 4 && i % 200 > 50) || (i > 3 && i > 4));") != -1);
 
         // Recompile decompiled source code and check errors
-        assertTrue(CompilerUtil.compile("1.7", new JavaSourceFileObject(internalClassName, source)));
+        assertTrue(CompilerUtil.compile("1.8", new JavaSourceFileObject(internalClassName, source)));
     }
 
     @Test
@@ -235,7 +235,7 @@ public class JavaLoopTest extends TestCase {
         assertTrue(source.matches(PatternMaker.make("/* 162:   0 */", "break label16;")));
 
         // Recompile decompiled source code and check errors
-        assertTrue(CompilerUtil.compile("1.7", new JavaSourceFileObject(internalClassName, source)));
+        assertTrue(CompilerUtil.compile("1.8", new JavaSourceFileObject(internalClassName, source)));
     }
 
     @Test
@@ -297,7 +297,7 @@ public class JavaLoopTest extends TestCase {
         assertTrue(source.indexOf("/* 524: 524 */") != -1);
 
         // Recompile decompiled source code and check errors
-        assertTrue(CompilerUtil.compile("1.7", new JavaSourceFileObject(internalClassName, source)));
+        assertTrue(CompilerUtil.compile("1.8", new JavaSourceFileObject(internalClassName, source)));
     }
 
     @Test
@@ -317,7 +317,7 @@ public class JavaLoopTest extends TestCase {
         assertTrue(source.matches(PatternMaker.make("for (String str : paramList)")));
 
         // Recompile decompiled source code and check errors
-        //assertTrue(CompilerUtil.compile("1.7", new JavaSourceFileObject(internalClassName, source)));
+        //assertTrue(CompilerUtil.compile("1.8", new JavaSourceFileObject(internalClassName, source)));
     }
 
     @Test
@@ -341,7 +341,7 @@ public class JavaLoopTest extends TestCase {
         assertTrue(source.matches(PatternMaker.make(": 427 */", "for (int i = 0; i < 3; i++)")));
 
         // Recompile decompiled source code and check errors
-        assertTrue(CompilerUtil.compile("1.7", new JavaSourceFileObject(internalClassName, source)));
+        assertTrue(CompilerUtil.compile("1.8", new JavaSourceFileObject(internalClassName, source)));
     }
 
     @Test
@@ -365,7 +365,7 @@ public class JavaLoopTest extends TestCase {
         assertTrue(source.matches(PatternMaker.make(": 427 */", "for (int i = 0; i < 3; i++)")));
 
         // Recompile decompiled source code and check errors
-        assertTrue(CompilerUtil.compile("1.7", new JavaSourceFileObject(internalClassName, source)));
+        assertTrue(CompilerUtil.compile("1.8", new JavaSourceFileObject(internalClassName, source)));
     }
 
     @Test
@@ -388,7 +388,7 @@ public class JavaLoopTest extends TestCase {
         assertTrue(source.matches(PatternMaker.make(": 427 */", "for (int i = 0; i < 3; i++)")));
 
         // Recompile decompiled source code and check errors
-        assertTrue(CompilerUtil.compile("1.7", new JavaSourceFileObject(internalClassName, source)));
+        assertTrue(CompilerUtil.compile("1.8", new JavaSourceFileObject(internalClassName, source)));
     }
 
     protected String decompile(Loader loader, Printer printer, String internalTypeName) throws Exception {

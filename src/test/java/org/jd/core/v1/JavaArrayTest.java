@@ -59,7 +59,7 @@ public class JavaArrayTest extends TestCase {
         assertTrue(source.matches(PatternMaker.make(": 75 */", "testInt3(new int[][][] { { { 0, 1")));
 
         // Recompile decompiled source code and check errors
-        assertTrue(CompilerUtil.compile("1.7", new JavaSourceFileObject(internalClassName, source)));
+        assertTrue(CompilerUtil.compile("1.8", new JavaSourceFileObject(internalClassName, source)));
     }
 
     @Test
@@ -85,7 +85,7 @@ public class JavaArrayTest extends TestCase {
         assertTrue(source.matches(PatternMaker.make(": 73 */", "testInt2(new int[][]", "{ { 1 } ,")));
 
         // Recompile decompiled source code and check errors
-        assertTrue(CompilerUtil.compile("1.7", new JavaSourceFileObject(internalClassName, source)));
+        assertTrue(CompilerUtil.compile("1.8", new JavaSourceFileObject(internalClassName, source)));
     }
 
     @Test

@@ -103,7 +103,7 @@ public class JavaBasicTest extends TestCase {
         assertTrue(source.indexOf("NaND") == -1);
 
         // Recompile decompiled source code and check errors
-        assertTrue(CompilerUtil.compile("1.7", new JavaSourceFileObject(internalClassName, source)));
+        assertTrue(CompilerUtil.compile("1.8", new JavaSourceFileObject(internalClassName, source)));
     }
 
     @Test
@@ -135,7 +135,7 @@ public class JavaBasicTest extends TestCase {
         assertTrue(source.indexOf("NaND") == -1);
 
         // Recompile decompiled source code and check errors
-        assertTrue(CompilerUtil.compile("1.7", new JavaSourceFileObject(internalClassName, source)));
+        assertTrue(CompilerUtil.compile("1.8", new JavaSourceFileObject(internalClassName, source)));
     }
 
     @Test
@@ -156,7 +156,7 @@ public class JavaBasicTest extends TestCase {
         assertTrue(source.matches(PatternMaker.make(": 39 */", "this.short123 = 3;")));
 
         // Recompile decompiled source code and check errors
-        assertTrue(CompilerUtil.compile("1.7", new JavaSourceFileObject(internalClassName, source)));
+        assertTrue(CompilerUtil.compile("1.8", new JavaSourceFileObject(internalClassName, source)));
     }
 
     @Test
@@ -170,7 +170,7 @@ public class JavaBasicTest extends TestCase {
         assertTrue(source.matches(PatternMaker.make("public interface Interface", "extends Serializable")));
 
         // Recompile decompiled source code and check errors
-        assertTrue(CompilerUtil.compile("1.7", new JavaSourceFileObject(internalClassName, source)));
+        assertTrue(CompilerUtil.compile("1.8", new JavaSourceFileObject(internalClassName, source)));
     }
 
     @Test
@@ -190,7 +190,7 @@ public class JavaBasicTest extends TestCase {
         assertTrue(source.matches(PatternMaker.make("/* 176: 176 */", "return str;")));
 
         // Recompile decompiled source code and check errors
-        assertTrue(CompilerUtil.compile("1.7", new JavaSourceFileObject(internalClassName, source)));
+        assertTrue(CompilerUtil.compile("1.8", new JavaSourceFileObject(internalClassName, source)));
     }
 
     @Test
@@ -213,7 +213,7 @@ public class JavaBasicTest extends TestCase {
         assertTrue(source.matches(PatternMaker.make("/* 188: 188 */", "protected static final Integer INTEGER_255 = new Integer(255);")));
 
         // Recompile decompiled source code and check errors
-        assertTrue(CompilerUtil.compile("1.7", new JavaSourceFileObject(internalClassName, source)));
+        assertTrue(CompilerUtil.compile("1.8", new JavaSourceFileObject(internalClassName, source)));
     }
 
     @Test

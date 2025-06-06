@@ -100,7 +100,7 @@ public class JavaInnerOuterClassTest extends TestCase {
         assertTrue(source.matches(PatternMaker.make("public class InnerInnerClass", "{", "}")));
 
         // Recompile decompiled source code and check errors
-        assertTrue(CompilerUtil.compile("1.7", new JavaSourceFileObject(internalClassName, source)));
+        assertTrue(CompilerUtil.compile("1.8", new JavaSourceFileObject(internalClassName, source)));
     }
 
     protected String decompile(Loader loader, Printer printer, String internalTypeName) throws Exception {

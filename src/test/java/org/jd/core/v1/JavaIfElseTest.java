@@ -77,7 +77,7 @@ public class JavaIfElseTest extends TestCase {
         assertTrue(source.matches(PatternMaker.make("/* 184: 184 */", "if ((i == 1 && (i == 5 || i == 6 || i == 7) && i == 8 && (i == 9 || i == 10 || i == 11)) || (i == 4 && i % 200 > 50) || (i > 3 && i > 4))")));
 
         // Recompile decompiled source code and check errors
-        assertTrue(CompilerUtil.compile("1.7", new JavaSourceFileObject(internalClassName, source)));
+        assertTrue(CompilerUtil.compile("1.8", new JavaSourceFileObject(internalClassName, source)));
     }
 
     protected String decompile(Loader loader, Printer printer, String internalTypeName) throws Exception {

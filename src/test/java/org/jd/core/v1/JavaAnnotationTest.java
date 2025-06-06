@@ -62,7 +62,7 @@ public class JavaAnnotationTest extends TestCase {
 
         // Recompile decompiled source code and check errors
         assertTrue(CompilerUtil.compile(
-                "1.7",
+                "1.8",
                 new JavaSourceFileObject(internalClassName, source),
                 new JavaSourceFileObject("org/jd/core/test/annotation/Author", "package org.jd.core.test.annotation; public @interface Author {Name value(); Name[] contributors() default {};}"),
                 new JavaSourceFileObject("org/jd/core/test/annotation/Name", "package org.jd.core.test.annotation; public @interface Name {String salutation() default \"\"; String value(); String last() default \"\";}"),
@@ -85,7 +85,7 @@ public class JavaAnnotationTest extends TestCase {
 
         // Recompile decompiled source code and check errors
         assertTrue(CompilerUtil.compile(
-                "1.7",
+                "1.8",
                 new JavaSourceFileObject(internalClassName, source),
                 new JavaSourceFileObject("org/jd/core/test/annotation/Name", "package org.jd.core.test.annotation; public @interface Name {String value();}")
             ));
@@ -108,7 +108,7 @@ public class JavaAnnotationTest extends TestCase {
         assertTrue(source.matches(PatternMaker.make("/*  27:   0 */", "Class clazz() default Object.class;")));
 
         // Recompile decompiled source code and check errors
-        assertTrue(CompilerUtil.compile("1.7", new JavaSourceFileObject(internalClassName, source)));
+        assertTrue(CompilerUtil.compile("1.8", new JavaSourceFileObject(internalClassName, source)));
     }
 
     protected String decompile(Loader loader, Printer printer, String internalTypeName) throws Exception {
