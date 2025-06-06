@@ -36,22 +36,22 @@ public class JavaAutoboxingTest extends TestCase {
     protected JavaFragmentToTokenProcessor tokenizer = new JavaFragmentToTokenProcessor();
     protected WriteTokenProcessor writer = new WriteTokenProcessor();
 
+    static class AutoboxingAndUnboxing {
+        void test() {
+            Integer intObj = 10;
+            int i = intObj;
+        }
+    }
+
     @Test
     // https://github.com/java-decompiler/jd-core/issues/14
     public void testAutoboxing() throws Exception {
-        class AutoboxingAndUnboxing {
-            void test() {
-                Integer intObj = 10;
-                int i = intObj;
-            }
-        }
-
         String internalClassName = AutoboxingAndUnboxing.class.getName().replace('.', '/');
         String source = decompile(new ClassPathLoader(), new PlainTextPrinter(), internalClassName);
 
         // Check decompiled source code
-        assertTrue(source.matches(PatternMaker.make(": 44 */", "Integer intObj = 10;")));
-        assertTrue(source.matches(PatternMaker.make(": 45 */", "int i = intObj;")));
+        assertTrue(source.matches(PatternMaker.make(": 41 */", "Integer intObj = 10;")));
+        assertTrue(source.matches(PatternMaker.make(": 42 */", "int i = intObj;")));
 
         // Recompile decompiled source code and check errors
         assertTrue(CompilerUtil.compile("1.8", new JavaSourceFileObject(internalClassName, source)));

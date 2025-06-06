@@ -36,38 +36,38 @@ public class CfrTest extends TestCase {
     protected JavaFragmentToTokenProcessor tokenizer = new JavaFragmentToTokenProcessor();
     protected WriteTokenProcessor writer = new WriteTokenProcessor();
 
+    static class FloatingPointCasting {
+        private final long l = 9223372036854775806L;
+        private final Long L = 9223372036854775806L;
+
+        long getLong() {
+            return 9223372036854775806L;
+        }
+
+        void test1() {
+            long b = (long) (double) getLong();
+            System.out.println(b == getLong()); // Prints "false"
+        }
+        void test2() {
+            long b = (long) (double) l;
+            System.out.println(b == l); // Prints "false"
+        }
+        void test3() {
+            long b = (long) (double) L;
+            System.out.println(b == L); // Prints "false"
+        }
+    }
+
     @Test
     // https://github.com/java-decompiler/jd-core/issues/34
     public void testFloatingPointCasting() throws Exception {
-        class FloatingPointCasting {
-            private final long l = 9223372036854775806L;
-            private final Long L = 9223372036854775806L;
-
-            long getLong() {
-                return 9223372036854775806L;
-            }
-
-            void test1() {
-                long b = (long) (double) getLong();
-                System.out.println(b == getLong()); // Prints "false"
-            }
-            void test2() {
-                long b = (long) (double) l;
-                System.out.println(b == l); // Prints "false"
-            }
-            void test3() {
-                long b = (long) (double) L;
-                System.out.println(b == L); // Prints "false"
-            }
-        }
-
         String internalClassName = FloatingPointCasting.class.getName().replace('.', '/');
         String source = decompile(new ClassPathLoader(), new PlainTextPrinter(), internalClassName);
 
         // Check decompiled source code
-        assertTrue(source.matches(PatternMaker.make(": 51 */", "long b = (long)(double)")));
-        assertTrue(source.matches(PatternMaker.make(": 55 */", "long b = Long.MAX_VALUE")));
-        assertTrue(source.matches(PatternMaker.make(": 59 */", "long b = (long)(double)")));
+        assertTrue(source.matches(PatternMaker.make(": 48 */", "long b = (long)(double)")));
+        assertTrue(source.matches(PatternMaker.make(": 52 */", "long b = Long.MAX_VALUE")));
+        assertTrue(source.matches(PatternMaker.make(": 56 */", "long b = (long)(double)")));
 
         // Recompile decompiled source code and check errors
         assertTrue(CompilerUtil.compile("1.8", new JavaSourceFileObject(internalClassName, source)));

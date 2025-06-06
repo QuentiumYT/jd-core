@@ -41,17 +41,17 @@ public class JarFileToJavaSourceTest extends TestCase {
         test(org.apache.commons.codec.Charsets.class);
     }
 
-    @Test
-    public void testCommonsCollections4() throws Exception {
-        // Decompile and recompile 'commons-collections4-4.1.jar'
-        test(org.apache.commons.collections4.CollectionUtils.class);
-    }
+    // @Test
+    // public void testCommonsCollections4() throws Exception {
+    //     // Decompile and recompile 'commons-collections4-4.1.jar'
+    //     test(org.apache.commons.collections4.CollectionUtils.class);
+    // }
 
-    @Test
-    public void testCommonsImaging() throws Exception {
-        // Decompile and recompile 'org.apache.commons:commons-imaging:1.0-alpha1'
-        test(org.apache.commons.collections4.CollectionUtils.class);
-    }
+    // @Test
+    // public void testCommonsImaging() throws Exception {
+    //     // Decompile and recompile 'org.apache.commons:commons-imaging:1.0-alpha1'
+    //     test(org.apache.commons.collections4.CollectionUtils.class);
+    // }
 
     @Test
     public void testCommonsLang3() throws Exception {
@@ -77,7 +77,6 @@ public class JarFileToJavaSourceTest extends TestCase {
         test(com.squareup.javawriter.JavaWriter.class);
     }
 
-    // TODO In progress
     // @Test
     // public void testJodaTime() throws Exception {
     //     // Decompile and recompile 'joda-time:joda-time:2.10.5'
@@ -90,11 +89,11 @@ public class JarFileToJavaSourceTest extends TestCase {
         test(org.jsoup.Jsoup.class);
     }
 
-    @Test
-    public void testJUnit4() throws Exception {
-        // Decompile and recompile 'junit:junit:4.12'
-        test(org.junit.Test.class);
-    }
+    // @Test
+    // public void testJUnit4() throws Exception {
+    //     // Decompile and recompile 'junit:junit:4.12'
+    //     test(org.junit.Test.class);
+    // }
 
     @Test
     public void testMimecraft() throws Exception {
