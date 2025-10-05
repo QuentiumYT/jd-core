@@ -6,7 +6,7 @@ plugins {
 repositories {
     mavenCentral()
     maven {
-        url 'https://plugins.gradle.org/m2/'
+        url = 'https://plugins.gradle.org/m2/'
     }
 }
 
@@ -44,6 +44,7 @@ tasks.withType(JavaCompile) {
     sourceCompatibility = targetCompatibility = '1.8'
     options.compilerArgs << '-Xlint:deprecation'
     options.compilerArgs << '-Xlint:unchecked'
+    options.compilerArgs << '-Xlint:-options'
     options.encoding = 'UTF-8'
 }
 
@@ -57,9 +58,9 @@ task sourceJar(type: Jar) {
 publishing {
     publications {
         publicationJdCore(MavenPublication) {
-            groupId 'org.jd'
-            artifactId 'jd-core'
-            version project.version
+            groupId = 'org.jd'
+            artifactId = 'jd-core'
+            version = project.version
             from components.java
             artifact tasks.sourceJar
         }
