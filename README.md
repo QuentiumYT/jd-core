@@ -2,14 +2,14 @@
 
 JD-Core is a Java decompiler written in Java.
 
-This is a fork of the original JD-Core project, which is no longer maintained. I tried to fix and update dependencies to make it live longer and be useful for the community. If you have a good knowledge of Java and want to help, feel free to contribute. 😃
+> This is a fork of the original JD-Core project, which is no longer maintained. I tried to fix and update dependencies to make it live longer and be useful for the community. If you have a good knowledge of Java and want to help, feel free to contribute. 😃
 
 - Java Decompiler project home page: https://java-decompiler.github.io
 - JD-Core source code: https://github.com/QuentiumYT/jd-core
 - JD-GUI public releases: https://launchpad.net/~quentiumyt/+archive/ubuntu/jd-gui
 
 ## Description
-JD-Core is a standalone Java library containing the Java decompiler of "Java Decompiler project". It support Java 1.1.8 (not tested) Java 8 to Java 21, including Lambda expressions, method references and default methods. JD-Core is the engine of JD-GUI.
+JD-Core is a standalone Java library containing the Java decompiler of "Java Decompiler project". It support Java 8 to Java 25, including Lambda expressions, method references and default methods. JD-Core is the engine of JD-GUI.
 
 ## How to build JD-Core ?
 ```
@@ -17,7 +17,8 @@ JD-Core is a standalone Java library containing the Java decompiler of "Java Dec
 > cd jd-core/
 > ./gradlew build
 ```
-_generates "build/libs/jd-core-x.y.z.jar"_
+
+generate _"build/libs/jd-core-x.y.z.jar"_
 
 ## How to use JD-Core ?
 
@@ -107,4 +108,4 @@ String source = printer.toString();
 ```
 
 ## License
-Released under the [GNU GPL v3](LICENSE).
+Released under the [GNU GPLv3](LICENSE).
